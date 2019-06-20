@@ -1,15 +1,23 @@
-var peso = prompt('Qual seu peso na terra?', 0);
+var peso = parseInt(prompt("Qual seu peso na terra?", 0));
 
-var planeta = prompt('Em qual planeta deseja saber seu peso? (Escolha entre as opções: Marte, Saturno ou Urano')
+var planeta = prompt(
+  "Em qual planeta deseja saber seu peso? (Escolha entre as opções: Marte ou Jupter"
+);
 
-if(planeta == 'Marte'){
+var gTerra = 9.8;
+var gMarte = 3.7;
+var gJupter = 24.8;
+var pesoFinal;
 
-    document.writeln("Seu peso em marte é:" + peso)
-} else if(planeta == 'Saturno'){
-    
-    document.writeln("Seu peso em saturno é:" + peso)
-
-} else if(planeta == 'Urano'){
-
-    document.writeln("Seu peso em urano é:" + peso)
+if (planeta == "Marte") {
+  pesoFinal = (peso * gMarte) / gTerra;
+  document.writeln("Seu peso em Marte é: " + pesoFinal + "Kg");
+} else if (planeta == "Jupter") {
+  pesoFinal = (peso * gJupter) / gTerra;
+  document.writeln("Seu peso em Jupter é: " + pesoFinal + "Kg");
+} else {
+  pesoFinal = 999999999999;
+  document.writeln(
+    "Não conheço esse planeta! Mas seu peso em Krypthon é: " + pesoFinal
+  );
 }
