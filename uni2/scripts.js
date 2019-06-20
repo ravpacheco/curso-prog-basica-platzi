@@ -1,0 +1,1 @@
+alert("Não se esqueça de fazer as compras");
