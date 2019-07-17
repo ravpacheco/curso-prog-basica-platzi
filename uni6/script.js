@@ -20,7 +20,7 @@ function executaFizzBuzz(){
             resultado.insertAdjacentHTML('beforeend', "<p class='buzz'>Buzz </p>");
         } else {
             console.log(numero)
-            resultado.insertAdjacentHTML('beforeend', "<p>" + i + "</p>");
+            resultado.insertAdjacentHTML('beforeend', "<p>" + numero + "</p>");
         }
         numero++;
     }
