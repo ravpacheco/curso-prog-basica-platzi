@@ -1,18 +1,22 @@
-var express = require("express");
-var applicacao = express();
+var expressjs = require("express");
 
-applicacao.get("/", inicio);
-applicacao.get("/cursos", cursos);
+var aplicacao = expressjs();
 
-function inicio(req, resultado)
-{
-  resultado.send("Está é a <strong>página principal</strong> o/");
+aplicacao.get("/", hello);
+aplicacao.get("/cursos", cursos);
+aplicacao.get("/hora", retornaHora);
+
+function retornaHora(req, res){
+    res.send("A hora atual é:" + new Date().getHours());
 }
 
-function cursos(req, resultado)
-{
-  resultado.send("Aqui estão os <strong>cursos</strong>");
+function hello(req, res){
+    res.send("<h1>Olá tudo bem?</h1>") 
 }
 
-applicacao.listen(8989);
-console.log("Aplicação está sendo executada...");
+function cursos(req, res){
+    res.send("<ul><li>Programação básica</li><li>Programação Avançada</li></ul>");
+}
+
+aplicacao.listen(8989);
+console.log("Aplicação em execução...")
